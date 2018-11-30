@@ -37,9 +37,12 @@ class ListModelMixin(object):
 
 
 
-class PostList(generics.ListAPIView):
+class PostList(generics.ListCreateAPIView):
     queryset = post.objects.all()
     serializer_class = PostSerializer
+
+
+
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):

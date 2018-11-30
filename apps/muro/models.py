@@ -11,9 +11,9 @@ class post(models.Model):
     nombre = models.CharField(max_length=256)
     negocio = models.CharField( max_length=256)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
-    fecha_vencimiento =  models.DateTimeField()
+    fecha_vencimiento =  models.DateTimeField(null=True,default=True)
     texto = models.TextField(max_length=2000)
-    imagen = models.ImageField(null=True,blank=True,upload_to="estaticos/posts_imagenes/")
+    imagen = models.ImageField(null=True,default=True,blank=True,upload_to="estaticos/posts_imagenes/")
 
     def __str__(self):
         return str(self.texto)
